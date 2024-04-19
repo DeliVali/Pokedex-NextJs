@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pokemonCard {
+    width: 50%;
+    height: 50vh;
+    margin: 2em auto;
+    box-shadow:   -15px 0 0 0 black,
+                   15px 0 0 0 black,
+                   0 -15px 0 0 black,
+                   0 15px 0 0 black;
+} 
+
+
