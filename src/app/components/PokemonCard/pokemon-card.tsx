@@ -1,20 +1,26 @@
-"use client"; // 👈 use it here
-import { useState } from "react";
-
-function PokemonCard() {
-  const [background, setBackground] = useState(
-    "https://static.wikia.nocookie.net/pokemon-ultra-fire-sun/images/9/99/Cyndaquil.png/revision/latest?cb=20191018202642"
-  );
+import { PokedexInterface } from "@/app/utils/Interfaces/PokedexInterface";
+import "./PokemonCard.css";
+import Image from "next/image";
+import { pokemonType } from "@/app/utils/enum/pokemonType.enum";
+async function PokemonCard(pokemon: { name: string; url: string }) {
+  const pokemonData = await fetch(pokemon.url).then((res) => res.json());
+  const type: string = pokemonData?.types[0].type.name;
   return (
-    <>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg pokemonCard h-full">
-        <div
-          style={{
-            background: `url(${background})`,
-          }}
-        ></div>
+    <div
+      className="rounded overflow-hidden shadow-lg pokemonCard mx-3 my-3 max-h-lvh non"
+      style={{ backgroundColor: pokemonType[type as keyof typeof pokemonType] }}
+    >
+      <div className="flex justify-center">
+        <Image
+          width={150}
+          height={150}
+          className="p-5"
+          alt={"Sprite of " + pokemon?.name}
+          src={pokemonData?.sprites?.front_default || "/MissingNO.png"}
+        />
       </div>
-    </>
+      <h1 className="text-center ">{pokemon?.name}</h1>
+    </div>
   );
 }
 

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.pokeBall-Bg {
+    background: linear-gradient(red 54%, black 56%, white 45%);
+}

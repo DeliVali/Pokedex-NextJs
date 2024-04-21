@@ -1,0 +1,31 @@
+.pokemonCard {
+    width: 100%;
+    height: 200px;
+    max-width: 16rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: -8px 0 0 0 black,
+                 8px 0 0 0 black,
+                 0 -8px 0 0 black,
+                 0 8px 0 0 black;
+}
+.pokemonCard:hover {
+    transform: scale(1.1);
+}
+.pokemonCard:hover img {
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

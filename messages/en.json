@@ -1,0 +1,9 @@
+{
+    "Index":{
+        "Welcome": "Welcome to the Pokedex!",
+        "Search": "Search",
+        "Results": "Results",
+        "NoResults": "No results found.",
+        "Error": "An error occurred. Please try again later."
+    }
+}
