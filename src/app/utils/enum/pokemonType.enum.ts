@@ -1,7 +1,7 @@
-export enum pokemonType {
+export enum pokemonTypeColors {
         fire = '#EE8130',
         grass = '#7AC74C',
-        eletric = '#2BF65',
+        electric = 'rgb(255 242 113)',
         rock = '#B6A136',
         fairy = '#D68F7D02C',
         water = '#6390F0',
@@ -17,4 +17,25 @@ export enum pokemonType {
         ghost = '#735797',
         dark = '#705746',
         steel = '#B7B7CE',
+}
+export enum pokemonType {
+        fire = 'fire',
+        grass = 'grass',
+        electric = 'electric',
+        rock = 'rock',
+        fairy = 'fairy',
+        water = 'water',
+        ground = 'ground',
+        poison = 'poison',
+        bug = 'bug',
+        dragon = 'dragon',
+        psychic = 'psychic',
+        flying = 'flying',
+        fighting = 'fighting',
+        normal = 'normal',
+        ice = 'ice',
+        ghost = 'ghost',
+        dark = 'dark',
+        steel = 'steel',
+        unknown = 'unknown',
 }

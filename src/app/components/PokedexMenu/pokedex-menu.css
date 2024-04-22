@@ -39,3 +39,38 @@
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
+
+@media (max-width: 768px) {
+    .pokedex-menu {
+        height: auto;
+    }
+
+    .top-bottom-pokedex-Columns {
+        height: auto;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .left-right-pokedex-Columns {
+        height: auto;
+    }
+
+    .circle-with-spotlight {
+        width: 80px;
+        height: 80px;
+        left: 2px;
+        top: 3px;
+    }
+
+    .circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle-with-spotlight::before {
+        top: 15px;
+        left: 15px;
+        width: 20px;
+        height: 20px;
+    }
+}

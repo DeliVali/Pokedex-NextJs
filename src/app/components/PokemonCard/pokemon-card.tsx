@@ -1,14 +1,30 @@
-import { PokedexInterface } from "@/app/utils/Interfaces/PokedexInterface";
+"use client";
 import "./PokemonCard.css";
 import Image from "next/image";
-import { pokemonType } from "@/app/utils/enum/pokemonType.enum";
-async function PokemonCard(pokemon: { name: string; url: string }) {
-  const pokemonData = await fetch(pokemon.url).then((res) => res.json());
-  const type: string = pokemonData?.types[0].type.name;
+import { pokemonTypeColors } from "@/app/utils/enum/pokemonType.enum";
+import { useEffect, useState } from "react";
+import { url } from "inspector";
+
+function PokemonCard(pokemon: { name: string; url: string }) {
+  const [pokemonData, setPokemonData] = useState<any>(null);
+  const [type, setType] = useState<string>("");
+  useEffect(() => {
+    fetch(pokemon.url)
+      .then((response) => response.json())
+      .then((data) => {
+        setPokemonData(data);
+        setType(data.types[0].type.name);
+        console.log(data.types[0].type.name);
+      });
+  }, [pokemon.url]);
+
   return (
     <div
       className="rounded overflow-hidden shadow-lg pokemonCard mx-3 my-3 max-h-lvh non"
-      style={{ backgroundColor: pokemonType[type as keyof typeof pokemonType] }}
+      style={{
+        backgroundColor:
+          pokemonTypeColors[type as keyof typeof pokemonTypeColors],
+      }}
     >
       <div className="flex justify-center">
         <Image
