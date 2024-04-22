@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+# Este código implementa un diseño pixelado similar a Pokémon.
+# La arquitectura fue elegida para crear una sensación nostálgica y retro, reminiscente de los juegos clásicos de Pokémon.
+# El diseño pixelado agrega un estilo visual único y mejora la estética general de la aplicación.
+
 
 # FILEPATH
 
