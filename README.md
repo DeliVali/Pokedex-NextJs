@@ -1,8 +1,8 @@
 
 
-# Este código implementa un diseño pixelado similar a Pokémon.
-# La arquitectura fue elegida para crear una sensación nostálgica y retro, reminiscente de los juegos clásicos de Pokémon.
-# El diseño pixelado agrega un estilo visual único y mejora la estética general de la aplicación.
+1.- Este código implementa un diseño pixelado similar a Pokémon.
+2.- La arquitectura fue elegida para crear una sensación nostálgica y retro, reminiscente de los juegos clásicos de Pokémon.
+3.- El diseño pixelado agrega un estilo visual único y mejora la estética general de la aplicación.
 
 
 # FILEPATH
