@@ -25,9 +25,9 @@ Fecha: [22/04/2024]
  
  * 1. Abre una terminal en la carpeta raíz del proyecto.
  * 2. Ejecuta el siguiente comando para instalar las dependencias del proyecto:
- *    ```pnpm install
+ *    ``` pnpm install ```
  * 3. Una vez que la instalación de las dependencias haya finalizado, ejecuta el siguiente comando para iniciar el servidor de desarrollo:
- *    ```pnpm run dev
+ *    ``` pnpm run dev ```
  * 4. El servidor de desarrollo se ejecutará en http://localhost:3000.
  * ¡Listo! Ahora puedes acceder a la aplicación en tu navegador web.
  */
