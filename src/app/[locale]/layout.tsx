@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NextIntlClientProvider } from "next-intl";
 
 const pokemonFont = localFont({
   src: "../assets/fonts/Early GameBoy.ttf",
@@ -21,8 +22,10 @@ export default function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
-      <body className={`${pokemonFont.variable} font-sans`}>{children}</body>
-    </html>
+    <NextIntlClientProvider locale={locale}>
+      <html lang={locale}>
+        <body className={`${pokemonFont.variable} font-sans`}>{children}</body>
+      </html>
+    </NextIntlClientProvider>
   );
 }

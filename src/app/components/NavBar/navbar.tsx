@@ -21,8 +21,8 @@ function NavBar() {
           </div>
           <div style={{ marginBottom: "10vh" }}>
             <ul className="flex  font-medium p-2 md:p-0 mt-4 border mr-5 align-middle ">
-              <NavBarButtons name="Home" reference="/" />
-              <NavBarButtons name="About" reference="/about" />
+              <NavBarButtons name="Inicio" reference="/" />
+              <NavBarButtons name="Acerca de" reference="/about" />
             </ul>
           </div>
         </div>

@@ -11,6 +11,7 @@ import { fetchAllPokemons } from "../utils/functions/fetchPokemons";
 import fetchAllTypes from "../utils/functions/fetchAllTypes";
 import PokemonsWithType from "../utils/functions/fetchAllPokemonsWithType";
 import { pokemonType } from "../utils/enum/pokemonType.enum";
+import { useTranslations } from "next-intl";
 
 //Lazy loading when fetching pokemon card
 const LazyLoader = dynamic(
@@ -26,7 +27,6 @@ export default function Home() {
   const [pokemons, setPokemons] = useState<
     { name: string; url: string }[] | null
   >(null);
-  const [pokemonTypes, setPokemonType] = useState<string[] | null>(null);
   const [pageEnd, setPageEnd] = useState(0);
   const [filteredSearch, setFilteredSearch] = useState<string | undefined>(
     undefined
@@ -57,7 +57,7 @@ export default function Home() {
   const pokemonCards = (
     <LazyLoader>
       <Suspense>
-        <div className="flex flex-wrap p-4 justify-between">
+        <div className="flex flex-wrap mx-9 justify-between">
           {pokemons?.map((pokemon: { name: string; url: string }, index) => (
             <PokemonCard key={index} name={pokemon?.name} url={pokemon?.url} />
           ))}
@@ -76,7 +76,7 @@ export default function Home() {
           setPage(page - 1);
         }}
       >
-        Previous
+        Anterior
       </button>
       <span className="text-white mb-2 sm:mb-0 sm:mx-4">
         {page}/{pageEnd}
@@ -88,7 +88,7 @@ export default function Home() {
           setPage(page + 1);
         }}
       >
-        Next
+        Siguiente
       </button>
     </div>
   );
@@ -101,7 +101,10 @@ export default function Home() {
     >
       {Object.keys(pokemonType)?.map((type, index) => {
         return (
-          <option key={index} value={type}>
+          <option
+            key={index}
+            value={pokemonType[type as keyof typeof pokemonType]}
+          >
             {String(type).toUpperCase()}
           </option>
         );

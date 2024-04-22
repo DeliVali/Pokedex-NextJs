@@ -1,18 +1,17 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Image from "next/image";
 import "./PokemonInfoCard.css";
 import PokemonInfoBox from "../PokemonInfo/pokemon-info";
-import { PokemonInterface } from "@/app/utils/Interfaces/PokemonInterface";
 
-function PokemonInfoCard(pokemonInfo: PokemonInterface) {
+function PokemonInfoCard({ pokemonId }: { pokemonId: string }) {
   const [background, setBackground] = useState(
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png"
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
   );
 
   return (
     <>
-      <div className="rounded overflow-hidden shadow-lg pokemonCard max-h-lvh non">
+      <div className="rounded overflow-hidden shadow-lg pokemonInfoCard max-h-lvh non">
         <Image
           src={background}
           alt="A image depicting a pokemon sprite"
@@ -21,7 +20,8 @@ function PokemonInfoCard(pokemonInfo: PokemonInterface) {
           className="pokemonSprite"
           objectFit="contain"
         />
-        <PokemonInfoBox />
+
+        <PokemonInfoBox pokemonId={pokemonId} />
       </div>
     </>
   );
